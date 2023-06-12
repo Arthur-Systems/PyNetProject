@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="EN">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="/static/css/output.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script type="application/javascript" src="/static/js/script.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <title>OSPF Simulation</title>
+
+
+</head>
+
+<body>
+<section
+        class=" bg-center bg-cover bg-no-repeat bg-[url('/static/images/AdobeStock_350462327.jpeg')] bg-gray-700 bg-blend-multiply"
+>
+    <div
+            class="mx-auto flex h-screen min-h-screen max-w-screen-xl flex-col items-center justify-center px-4 py-24 text-center lg:py-56"
+    >
+        <h1
+                class="mb-4 text-4xl font-extrabold leading-none text-white pt-1/2 md:text-5xl lg:text-6xl"
+        >
+            OSPF SIMULATOR
+        </h1>
+        <p
+                class="mb-8 text-lg font-normal text-gray-300 sm:px-16 lg:px-48 lg:text-xl"
+        >
+            CSE-151 Advanced Networking Final Project
+        </p>
+        <form method="POST">
+            <div class="w-full px-3">
+                <label
+                        class="mb-2 block text-xs font-bold uppercase tracking-wide text-white" for="routers"
+                >
+                    Routers
+                </label>
+                <input
+                        class="mb-3 block w-full appearance-none rounded border border-gray-200 bg-gray-200 px-4 py-3 leading-tight text-gray-700 focus:border-gray-500 focus:bg-white focus:outline-none"
+                        type="text"
+                        placeholder="5"
+                        id="routers" name="routers"
+                />
+
+                <p class="text-xs italic text-white">
+                    Enter how many routers you would like and when you are done press
+                    enter!
+                </p>
+                {% if error %}
+                    <div role="alert">
+                        <div class="bg-red-100 px-4 py-3 border-50 border-red text-red">
+                            <p class="error">{{ error }}</p>
+                        </div>
+                    </div>
+                {% endif %}
+            </div>
+        </form>
+        <div class="mt-auto flex items-center justify-center pb-20">
+            <span class="text-white text-s">Scroll Down To Read More About OSPF</span>
+        </div>
+    </div>
+</section>
+
+`
+<section class="bg-gray-100">
+    <div class="mx-auto flex w-screen flex-col px-2 pt-20 pb-20">
+        <h1 class="mb-4 text-center text-4xl font-extrabold text-gray-900 md:text-5xl lg:text-6xl">
+            OSPF Information
+        </h1>
+        <p data-aos="fade-in" class="text-2xl font-extrabold">What is it? </p>
+        <p data-aos="fade-right"
+           class="mb-8 w-3/5 px-8 text-left text-lg font-normal text-gray-500 sm:px-7 lg:pl-14 lg:text-xl">
+            OSPF, or Open Shortest Path First, is a dynamic routing protocol used in computer networks to determine the
+            best path for routing IP packets. It is a link state
+            routing protocol that uses Dijkstra's algorithm to find the shortest
+            path between two nodes. This simulation will show you how the
+            algorithm works and how it finds the shortest path between two nodes.
+        </p>
+
+        <p data-aos="fade-in" class="pr-5 text-right text-2xl font-extrabold">What is it used for? </p>
+        <p data-aos="fade-left"
+           class="mb-8 px-8 text-right text-lg font-normal text-gray-500 sm:px-7 lg:pr-14 lg:pl-20 lg:text-xl">
+            OSPF is a versatile routing protocol that is used in various network environments such as enterprise
+            networks, data centers, ISPs, campus networks, and Internet Exchange Points (IXPs). In enterprise networks,
+            OSPF allows for smooth communication between different departments or branches. ISPs rely on OSPF to manage
+            routing within their networks and ensure stable internet connectivity. In data centers, OSPF facilitates
+            routing between network devices and servers. For large campus networks, OSPF guarantees connectivity between
+            multiple buildings or locations. In IXPs, OSPF optimizes routing for efficient exchange of internet traffic
+            between networks. Overall, OSPF's dynamic routing capabilities make it an important tool for efficient and
+            reliable routing within autonomous systems across diverse network settings.
+        </p>
+        <p data-aos="fade-in" class="text-2xl font-extrabold">Why do we use it? </p>
+        <p data-aos="fade-right"
+           class="mb-8 w-3/5 px-8 text-left text-lg font-normal text-gray-500 sm:px-7 lg:pl-14 lg:text-xl">
+            OSPF's link-state algorithm utilizes detailed network topology information to make accurate and efficient
+            routing decisions, resulting in faster convergence and better adaptation to network changes. Its
+            hierarchical design makes it scalable by dividing large networks into smaller areas, reducing the routing
+            information each router needs to process. OSPF also supports load balancing across multiple paths,
+            optimizing network resource utilization. In addition, OSPF provides robust security features, including
+            authentication mechanisms, to protect against unauthorized access and ensure the integrity of routing
+            updates. Overall, OSPF is a dependable and secure choice for dynamic, scalable, and efficient routing within
+            autonomous systems.
+        </p>
+        <p data-aos="fade-in" class="pr-5 text-right text-2xl font-extrabold">What does my program do? </p>
+        <p data-aos="fade-left"
+           class="mb-8 px-8 text-right text-lg font-normal text-gray-500 sm:px-7 lg:pr-14 lg:pl-20 lg:text-xl">
+            My program takes the user inputted number, and creates that many routers based on the number the user put
+            in. Each router is then connected to each other and is assigned a weight. This weight determines the path
+            the router will take to get to the destination router. The program then runs Dijkstra's algorithm to find
+            the shortest path between the two routers. The program will draw a line showing the path the packet will
+            take. The program will then write this to a HTML file to displayed to the user.
+        </p>
+        </br>
+
+        <p class="text-center">If you're ready to try my program out scroll up and type a number!</p>
+    </div>
+</section>
+
+<footer>
+    <script>
+        AOS.init();
+    </script>
+</footer>
+</body>
+
+</html>

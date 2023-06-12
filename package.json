@@ -1,0 +1,9 @@
+{
+  "devDependencies": {
+    "prettier": "^2.8.8",
+    "tailwindcss": "^3.3.2"
+  },
+  "dependencies": {
+    "animejs": "^3.2.1"
+  }
+}

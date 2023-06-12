@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="/static/css/output.css">
+    <script type="application/javascript" src="/static/js/script.js"></script>
+    <!--Tailwind-->
+    <title>OSPF Simulation</title>
+</head>
+<body class="min-h-screen !p-0">
+<div class="flex min-h-screen items-center justify-center">
+    <iframe src="{{ url_for('static', filename='PyNet.html') }}"
+            class="absolute top-0 left-0 h-full w-full border-0"></iframe>
+</div>
+
+<div class="relative h-screen">
+    <div class="fixed top-0 left-0 h-screen w-64 bg-gray-200">
+        <div class="flex h-full flex-col">
+            <div class="flex flex-col pt-15">
+                <h1 class="pr-5 text-center text-2xl font-bold">OSPF Simulation Control Panel</h1>
+                <p class="pr-3 pl-2 text-center text-xs text-gray-500"> Project made by Arthur Wei in CSE-151 </p>
+                <div class="pt-16">
+                    <form action="/map" method="POST">
+                        <h1 class="justify-center pl-2"> Number Of Routers:</h1>
+                        <input
+                                class="mb-3 w-full appearance-none rounded border border-gray-300 bg-gray-300 px-4 py-3 leading-tight text-gray-700 focus:border-gray-500 focus:bg-white focus:outline-none"
+                                type="number"
+                                placeholder="5"
+                                id="routerNumber" name="routers"
+                        />
+
+                        <h1 class="pr-5 text-left font-bold text-1xl">Pathing Settings:</h1>
+                        <h1 class="pl-2"> Starting Router:</h1>
+                        <input
+                                class="mb-3 w-full appearance-none rounded border border-gray-300 bg-gray-300 px-4 py-3 leading-tight text-gray-700 focus:border-gray-500 focus:bg-white focus:outline-none"
+                                type="number"
+                                placeholder="0"
+                                name="starting"
+                        />
+                        <h1 class="pl-2"> Ending Router:</h1>
+                        <input
+                                class="mb-3 w-full appearance-none rounded border border-gray-300 bg-gray-300 px-4 py-3 leading-tight text-gray-700 focus:border-gray-500 focus:bg-white focus:outline-none"
+                                type="number"
+                                placeholder="0"
+                                 name="ending"
+                        />
+                        {% if error %}
+                            <div role="alert">
+                                <div class="bg-red-100 px-4 py-3 border-50 border-red text-red">
+                                    <p class="error">{{ error }}</p>
+                                </div>
+                            </div>
+                        {% endif %}
+
+                        <button class="w-full cursor-pointer select-none justify-center rounded border-gray-400 bg-blue-500 px-4 py-2 font-bold text-black hover:bg-blue-700">
+                            Generate
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <button id="closeButton" class="absolute top-0 right-0 m-2 p-2">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-500" fill="none" viewBox="0 0 24 24"
+                 stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+        </button>
+    </div>
+</div>
+
+</body>
+</html>
