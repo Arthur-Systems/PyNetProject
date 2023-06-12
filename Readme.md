@@ -19,7 +19,7 @@ This project is a web application that visualizes OSPF (Open Shortest Path First
 2. Navigate to the project directory:
 
     ```
-    cd ospf-network-visualization
+    cd PyNetProject
     ```
 
 3. Install the required Python packages:
