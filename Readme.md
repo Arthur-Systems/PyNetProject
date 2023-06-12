@@ -38,7 +38,7 @@ This project is a web application that visualizes OSPF (Open Shortest Path First
 
 2. Open a web browser and navigate to `http://localhost:5500`.
 
-3. Enter the number of routers and the weights of the connections between them.
+3. Enter the number of routers.
 
 4. Select two routers to find the shortest path between them.
 
