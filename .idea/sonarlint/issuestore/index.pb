@@ -19,11 +19,3 @@ D
 templates/index.html,f/6/f69b8ce2e31684ae06f1b3e84821e07e3dfddb2f
 B
 templates/map.html,f/8/f81c41eadc945f0a7f8c6703434a458784609287
-<
-package.json,7/0/7030d0b2f71b999ff89a343de08c414af32fc93a
-=
-PyNet/OSPF.py,d/a/da633d6beb030b2b43ffcfd3bb49476049e3e3da
-9
-	Readme.md,0/c/0c1945d7443c2e154bd3e421c0d438bd4086d8c3
-6
-app.py,1/3/13cce7fd076299c81b4986166f3d822791c9490e
